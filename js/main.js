@@ -8,13 +8,45 @@ document.querySelector(".guess").addEventListener("click", checkWin);
 document.querySelector(".playAgain").addEventListener("click", playAgain);
 //gets random pokemon from pokeAPI and adds sprite to dom
 function getFetch() {
-  let random = Math.floor(Math.random() * 151);
+  //different generation of pokemon depending on which radio button is checked
+  if (document.querySelector("#kanto").checked) {
+    random = Math.floor(Math.random() * 151);
+  } else if (document.querySelector("#johto").checked) {
+    random = Math.floor(Math.random() * (251 - 152 + 1)) + 152;
+  } else if (document.querySelector("#hoenn").checked) {
+    random = Math.floor(Math.random() * (386 - 252 + 1)) + 252;
+  } else if (document.querySelector("#sinnoh").checked) {
+    random = Math.floor(Math.random() * (493 - 387 + 1)) + 387;
+  } else if (document.querySelector("#unova").checked) {
+    random = Math.floor(Math.random() * (649 - 494 + 1)) + 494;
+  } else if (document.querySelector("#kalos").checked) {
+    random = Math.floor(Math.random() * (721 - 650 + 1)) + 650;
+  } else if (document.querySelector("#alola").checked) {
+    random = Math.floor(Math.random() * (807 - 722 + 1)) + 722;
+  } else if (document.querySelector("#galar").checked) {
+    random = Math.floor(Math.random() * (905 - 808 + 1)) + 808;
+  } else if (document.querySelector("#unova").checked) {
+    random = Math.floor(Math.random() * (649 - 494 + 1)) + 494;
+  }
+
+  let regions = document.querySelectorAll('input[name="region"]');
+  regions.forEach((x) => {
+    x.addEventListener("change", () => {
+      document.querySelector(".toast").innerText =
+        "Your changes will apply to the next pokemon";
+      setTimeout(() => {
+        document.querySelector(".toast").innerText = "";
+      }, 3000);
+    });
+  });
+
   const url = `https://pokeapi.co/api/v2/pokemon/${random}`;
 
   fetch(url)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      document.querySelector("img").src = data.sprites.other["official-artwork"].front_default;
+      document.querySelector("img").src =
+        data.sprites.other["official-artwork"].front_default;
       document.querySelector("h1").innerText = data.name;
     })
     .catch((err) => {
@@ -33,7 +65,7 @@ function hideInfo() {
 function checkWin() {
   let answer = document.querySelector("h1").innerText;
   let guess = document.querySelector("input").value;
-  guess.toLowerCase() === answer.toLowerCase() ? correct() : notCorrect()
+  guess.toLowerCase() === answer.toLowerCase() ? correct() : notCorrect();
 }
 //if correct changes input color, reveals pokemon, show play again button, hides submit button
 function correct() {

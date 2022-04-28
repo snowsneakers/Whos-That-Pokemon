@@ -10,9 +10,24 @@
 body {
   width: 100%;
   min-height: 100vh;
+  position: relative;
+}
+header {
+  padding: 1rem;
+}
+main {
   display: grid;
   place-items: center;
-  position: relative;
+  min-height: calc(100vh - 125px);
+}
+.container,
+.userInput,
+.image,
+.generation,
+.regions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .background {
   position: absolute;
@@ -31,9 +46,6 @@ body {
 }
 .container {
   width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #ffffff44;
   border-radius: 1rem;
   box-shadow: 0 2px 5px 0 black;
@@ -42,10 +54,7 @@ body {
 .userInput,
 .image {
   width: 50%;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 img {
   width: 100%;
@@ -57,17 +66,29 @@ input {
 button {
   border: none;
   width: 50%;
-  padding: 2rem;
+  padding: 1.5rem;
   cursor: pointer;
   margin-top: 1rem;
 }
-h2 {
+.toast {
+  font-size: 0.75rem;
+  padding: 2rem;
   position: absolute;
-  top: 2rem;
-  right: 50%;
-  transform: translate(50%);
-  width: 100%;
+  bottom: 0.5rem;
+  right: 0.5rem;
   text-align: center;
+}
+.generation {
+  width: 33.333%;
+  flex-wrap: wrap;
+  padding: 1rem;
+  font-size: 0.75rem;
+  background: #ffffffa1;
+}
+.regions {
+  padding-top: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -82,11 +103,5 @@ h2 {
   }
   .image {
     padding-bottom: 1rem;
-  }
-  h2 {
-    top: 5rem;
-  }
-  body {
-    overflow-y: hidden;
   }
 }

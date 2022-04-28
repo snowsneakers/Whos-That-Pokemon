@@ -8,23 +8,72 @@
     <title>Who's That Pokemon!</title>
   </head>
   <body>
-    <body>
-		<!-- background image -->
-      <div class="background"></div>
-	  <!-- container for image and input/ buttons -->
+    <header>
+      <h2>Who's That Pokemon!</h2>
+    </header>
+    <!-- background image -->
+    <div class="background"></div>
+    <!-- container for image and input/ buttons -->
+    <main>
       <div class="container">
-        <h2>Who's That Pokemon!</h2>
         <div class="image">
           <img src="" alt="" />
           <h1 class="name"></h1>
         </div>
         <div class="userInput">
+          <div><span class="toast"></span></div>
           <input type="text" />
           <button class="guess">Guess</button>
           <button class="playAgain">Play Again</button>
+          <div class="regions">
+            <div class="generation">
+              <label for="kanto">kanto</label>
+              <input type="radio" name="region" id="kanto" checked />
+            </div>
+
+            <div class="generation">
+              <label for="johto">johto</label>
+              <input type="radio" name="region" id="johto" />
+            </div>
+
+            <div class="generation">
+              <label for="johto">Hoenn</label>
+              <input type="radio" name="region" id="hoenn" />
+            </div>
+
+            <div class="generation">
+              <label for="sinnoh">sinnoh</label>
+              <input type="radio" name="region" id="sinnoh" />
+            </div>
+
+            <div class="generation">
+              <label for="unova">unova</label>
+              <input type="radio" name="region" id="unova" />
+            </div>
+
+            <div class="generation">
+              <label for="kalos">kalos</label>
+              <input type="radio" name="region" id="kalos" />
+            </div>
+
+            <div class="generation">
+              <label for="alola">alola</label>
+              <input type="radio" name="region" id="alola" />
+            </div>
+
+            <div class="generation">
+              <label for="galar">galar</label>
+              <input type="radio" name="region" id="galar" />
+            </div>
+
+            <div class="generation">
+              <label for="all">all</label>
+              <input type="radio" name="region" id="all" />
+            </div>
+          </div>
         </div>
       </div>
-      <script src="js/main.js"></script>
-    </body>
+    </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
