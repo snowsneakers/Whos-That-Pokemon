@@ -6,7 +6,7 @@ hideInfo();
 document.querySelector(".guess").addEventListener("click", checkWin);
 //refreshes app to allow for more rounds of play
 document.querySelector(".playAgain").addEventListener("click", playAgain);
-
+//gets random pokemon from pokeAPI and adds sprite to dom
 function getFetch() {
   let random = Math.floor(Math.random() * 151);
   const url = `https://pokeapi.co/api/v2/pokemon/${random}`;
