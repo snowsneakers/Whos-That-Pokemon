@@ -25,9 +25,9 @@ function getFetch() {
     random = Math.floor(Math.random() * (807 - 722 + 1)) + 722;
   } else if (document.querySelector("#galar").checked) {
     random = Math.floor(Math.random() * (905 - 808 + 1)) + 808;
-  } else if (document.querySelector("#unova").checked) {
-    random = Math.floor(Math.random() * (649 - 494 + 1)) + 494;
-  }
+  } else if (document.querySelector("#all").checked) {
+    random = Math.floor(Math.random() * 898);
+  } 
 
   let regions = document.querySelectorAll('input[name="region"]');
   regions.forEach((x) => {
