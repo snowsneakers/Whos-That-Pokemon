@@ -86,9 +86,13 @@ button {
   background: #ffffffa1;
 }
 .regions {
-  padding-top: 2rem;
+  margin-top: 2rem;
   width: 100%;
   flex-wrap: wrap;
+}
+.scoring{
+  margin-top: 2rem;
+  line-height: 2;
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -103,5 +107,8 @@ button {
   }
   .image {
     padding-bottom: 1rem;
+  }
+  .container{
+    margin-bottom: 2rem;
   }
 }

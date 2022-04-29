@@ -2,6 +2,8 @@
 getFetch();
 // hides text and applys silhouette
 hideInfo();
+// resets score and puts high score in dom from local storage
+window.addEventListener("DOMContentLoaded", resetScore);
 //submits users guess to see if they match or not
 document.querySelector(".guess").addEventListener("click", checkWin);
 //refreshes app to allow for more rounds of play
@@ -27,7 +29,7 @@ function getFetch() {
     random = Math.floor(Math.random() * (905 - 808 + 1)) + 808;
   } else if (document.querySelector("#all").checked) {
     random = Math.floor(Math.random() * 898);
-  } 
+  }
 
   let regions = document.querySelectorAll('input[name="region"]');
   regions.forEach((x) => {
@@ -67,12 +69,14 @@ function checkWin() {
   let guess = document.querySelector("input").value;
   guess.toLowerCase() === answer.toLowerCase() ? correct() : notCorrect();
 }
+
 //if correct changes input color, reveals pokemon, show play again button, hides submit button
 function correct() {
   document.querySelector("input").style.backgroundColor = "#52b788";
   document.querySelector("img").style.filter = "brightness(1)";
   document.querySelector(".playAgain").style.display = "block";
   document.querySelector(".guess").style.display = "none";
+  scoreUp();
 }
 //if correct changes input color, reveals pokemon, show play again button, hides submit button, fills the input with pokemons name
 function notCorrect() {
@@ -80,8 +84,8 @@ function notCorrect() {
   document.querySelector("img").style.filter = "brightness(1)";
   document.querySelector(".playAgain").style.display = "block";
   document.querySelector(".guess").style.display = "none";
-  document.querySelector("input").value =
-    document.querySelector("h1").innerText;
+  document.querySelector("input").value = document.querySelector("h1").innerText;
+  resetScore();
 }
 
 //refreshes input
@@ -98,4 +102,27 @@ function playAgain() {
   hideInfo();
   refreshInput();
   document.querySelector(".guess").style.display = "block";
+}
+
+//score stuff
+let score = 0;
+
+function scoreUp() {
+  score++;
+  let highscore = localStorage.getItem("highscore");
+  if (highscore !== null) {
+    if (score > highscore) {
+      localStorage.setItem("highscore", score);
+    }
+  } else {
+    localStorage.setItem("highscore", score);
+  }
+  document.querySelector(".score").innerText = score;
+}
+
+function resetScore() {
+  score = 0;
+  let highscore = localStorage.getItem("highscore");
+  highscore === null ? (document.querySelector(".highScore").innerText = 0) : (document.querySelector(".highScore").innerText = highscore);
+  document.querySelector(".score").innerText = score;
 }
