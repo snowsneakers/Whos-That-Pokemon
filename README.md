@@ -14,6 +14,4 @@ The Pokemon are pulled from the pokeapi.co API randomly and by selected generati
 
 ## Lessons Learned:
 
-I really got a chance to see the power of using a framework like Bootstrap and how it can really put a nice touch to a site. There were some tricky little bumps along the way in regards of gathering the correct card prices from the API to ensure all prices searched on ebay were the correct type.
-
 I wanted to make a game that utilized local storage to learn more about it and so users could come back and try and beat their previous high score. This project was also good help with bolstering my API familiarity. 
