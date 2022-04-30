@@ -10,24 +10,41 @@
 body {
   width: 100%;
   min-height: 100vh;
-  position: relative;
 }
+
+.container,
+.userInput,
+.image,
+.generation,
+.regions,
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 header {
   padding: 1rem;
+  justify-content: space-between;
+}
+header svg{
+  width: 30px;
+  height: 30px;
 }
 main {
   display: grid;
   place-items: center;
   min-height: calc(100vh - 125px);
 }
-.container,
-.userInput,
-.image,
-.generation,
-.regions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.container {
+  width: 80%;
+  background: #ffffff44;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px 0 black;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 .background {
   position: absolute;
@@ -43,13 +60,6 @@ main {
   background-repeat: no-repeat;
   opacity: 0.7;
   z-index: -1;
-}
-.container {
-  width: 80%;
-  background: #ffffff44;
-  border-radius: 1rem;
-  box-shadow: 0 2px 5px 0 black;
-  padding: 2rem;
 }
 .userInput,
 .image {
@@ -71,12 +81,12 @@ button {
   margin-top: 1rem;
 }
 .toast {
-  font-size: 0.75rem;
-  padding: 2rem;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  color: red;
+  background: #ffffff44;
+  display: block;
+  font-size: 0.5rem;
   text-align: center;
+  padding-bottom: 1rem;
 }
 .generation {
   width: 33.333%;
@@ -110,5 +120,8 @@ button {
   }
   .container{
     margin-bottom: 2rem;
+  }
+  h2{
+    font-size: 1rem;
   }
 }
