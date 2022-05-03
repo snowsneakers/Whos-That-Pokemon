@@ -1,7 +1,7 @@
 # Who's That Pokemon?
 This will take everyone back to the good old days, the 90s. I wanted to create something using the pokeapi.co API, so I made a game to test your Pokemon knowledge. Chose your favorite generation, start guessing Pokemon, and get a high score!
 
-[Click here](https://whosthatpokemonhw.netlify.app/) to test your Pokemon knowledge.
+[Click here](https://whosthatpokemonsp.netlify.app/) to test your Pokemon knowledge.
 
 <img src="assets/updatedgif.gif" alt="app demo gif" width="100%"/>
 
